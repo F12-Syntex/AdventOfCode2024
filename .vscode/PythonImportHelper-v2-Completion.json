@@ -1,0 +1,191 @@
+[
+    {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "Day",
+        "kind": 6,
+        "importPath": "2024.boilerplate.Day",
+        "description": "2024.boilerplate.Day",
+        "peekOfCode": "class Day:\n    def __init__(self):\n        self.input_content = None\n    def solve_part1(self):\n        self.loadGrid()\n        self.prettyPrintGrid()\n        return 0\n    def solve_part2(self):\n        return 0\n    def loadInputFiles(self):",
+        "detail": "2024.boilerplate.Day",
+        "documentation": {}
+    },
+    {
+        "label": "solver",
+        "kind": 5,
+        "importPath": "2024.boilerplate.Day",
+        "description": "2024.boilerplate.Day",
+        "peekOfCode": "solver = Day()\nsolver.loadInputFiles()\npart1_result = solver.solve_part1()\nprint(\"Solution to Part 1:\", part1_result)\npart2_result = solver.solve_part2()\nprint(\"Solution to Part 2:\", part2_result)",
+        "detail": "2024.boilerplate.Day",
+        "documentation": {}
+    },
+    {
+        "label": "part1_result",
+        "kind": 5,
+        "importPath": "2024.boilerplate.Day",
+        "description": "2024.boilerplate.Day",
+        "peekOfCode": "part1_result = solver.solve_part1()\nprint(\"Solution to Part 1:\", part1_result)\npart2_result = solver.solve_part2()\nprint(\"Solution to Part 2:\", part2_result)",
+        "detail": "2024.boilerplate.Day",
+        "documentation": {}
+    },
+    {
+        "label": "part2_result",
+        "kind": 5,
+        "importPath": "2024.boilerplate.Day",
+        "description": "2024.boilerplate.Day",
+        "peekOfCode": "part2_result = solver.solve_part2()\nprint(\"Solution to Part 2:\", part2_result)",
+        "detail": "2024.boilerplate.Day",
+        "documentation": {}
+    },
+    {
+        "label": "Day",
+        "kind": 6,
+        "importPath": "2024.day1.Day1",
+        "description": "2024.day1.Day1",
+        "peekOfCode": "class Day:\n    def __init__(self):\n        self.input_content = None\n    def solve_part1(self):\n        self.loadGrid()\n        t1 = []\n        t2 = []\n        for row in self.grid:\n            row = \"\".join(row).strip().split(\" \")\n            row = [x for x in row if x]",
+        "detail": "2024.day1.Day1",
+        "documentation": {}
+    },
+    {
+        "label": "solver",
+        "kind": 5,
+        "importPath": "2024.day1.Day1",
+        "description": "2024.day1.Day1",
+        "peekOfCode": "solver = Day()\nsolver.loadInputFiles()\npart1_result = solver.solve_part1()\nprint(\"Solution to Part 1:\", part1_result)\npart2_result = solver.solve_part2()\nprint(\"Solution to Part 2:\", part2_result)",
+        "detail": "2024.day1.Day1",
+        "documentation": {}
+    },
+    {
+        "label": "part1_result",
+        "kind": 5,
+        "importPath": "2024.day1.Day1",
+        "description": "2024.day1.Day1",
+        "peekOfCode": "part1_result = solver.solve_part1()\nprint(\"Solution to Part 1:\", part1_result)\npart2_result = solver.solve_part2()\nprint(\"Solution to Part 2:\", part2_result)",
+        "detail": "2024.day1.Day1",
+        "documentation": {}
+    },
+    {
+        "label": "part2_result",
+        "kind": 5,
+        "importPath": "2024.day1.Day1",
+        "description": "2024.day1.Day1",
+        "peekOfCode": "part2_result = solver.solve_part2()\nprint(\"Solution to Part 2:\", part2_result)",
+        "detail": "2024.day1.Day1",
+        "documentation": {}
+    },
+    {
+        "label": "Day",
+        "kind": 6,
+        "importPath": "2024.day2.Day2",
+        "description": "2024.day2.Day2",
+        "peekOfCode": "class Day:\n    def __init__(self):\n        self.input_content = None\n    def solve_part1(self):\n        self.loadGrid()\n        self.grid = [[int(c) for c in line] for line in self.grid]\n        safe = 0 \n        for i in self.grid:\n            multiplier = self.checkMultiplier(i)\n            check = self.checkValidRow(i, multiplier)",
+        "detail": "2024.day2.Day2",
+        "documentation": {}
+    },
+    {
+        "label": "solver",
+        "kind": 5,
+        "importPath": "2024.day2.Day2",
+        "description": "2024.day2.Day2",
+        "peekOfCode": "solver = Day()\nsolver.loadInputFiles()\npart1_result = solver.solve_part1()\nprint(\"Solution to Part 1:\", part1_result)\npart2_result = solver.solve_part2()\nprint(\"Solution to Part 2:\", part2_result)",
+        "detail": "2024.day2.Day2",
+        "documentation": {}
+    },
+    {
+        "label": "part1_result",
+        "kind": 5,
+        "importPath": "2024.day2.Day2",
+        "description": "2024.day2.Day2",
+        "peekOfCode": "part1_result = solver.solve_part1()\nprint(\"Solution to Part 1:\", part1_result)\npart2_result = solver.solve_part2()\nprint(\"Solution to Part 2:\", part2_result)",
+        "detail": "2024.day2.Day2",
+        "documentation": {}
+    },
+    {
+        "label": "part2_result",
+        "kind": 5,
+        "importPath": "2024.day2.Day2",
+        "description": "2024.day2.Day2",
+        "peekOfCode": "part2_result = solver.solve_part2()\nprint(\"Solution to Part 2:\", part2_result)",
+        "detail": "2024.day2.Day2",
+        "documentation": {}
+    },
+    {
+        "label": "Day",
+        "kind": 6,
+        "importPath": "2024.day3.Day3",
+        "description": "2024.day3.Day3",
+        "peekOfCode": "class Day:\n    def __init__(self):\n        self.input_content = None\n    def solve_part1(self):\n        sum = 0\n        for mul in self.input_content.split(\"mul(\"):\n            if \")\" not in mul:\n                continue\n            mul = mul.split(\")\")[0].split(\",\")\n            mul = [int(x) for x in mul if x.isdigit()]",
+        "detail": "2024.day3.Day3",
+        "documentation": {}
+    },
+    {
+        "label": "solver",
+        "kind": 5,
+        "importPath": "2024.day3.Day3",
+        "description": "2024.day3.Day3",
+        "peekOfCode": "solver = Day()\nsolver.loadInputFiles()\npart1_result = solver.solve_part1()\nprint(\"Solution to Part 1:\", part1_result)\npart2_result = solver.solve_part2()\nprint(\"Solution to Part 2:\", part2_result)",
+        "detail": "2024.day3.Day3",
+        "documentation": {}
+    },
+    {
+        "label": "part1_result",
+        "kind": 5,
+        "importPath": "2024.day3.Day3",
+        "description": "2024.day3.Day3",
+        "peekOfCode": "part1_result = solver.solve_part1()\nprint(\"Solution to Part 1:\", part1_result)\npart2_result = solver.solve_part2()\nprint(\"Solution to Part 2:\", part2_result)",
+        "detail": "2024.day3.Day3",
+        "documentation": {}
+    },
+    {
+        "label": "part2_result",
+        "kind": 5,
+        "importPath": "2024.day3.Day3",
+        "description": "2024.day3.Day3",
+        "peekOfCode": "part2_result = solver.solve_part2()\nprint(\"Solution to Part 2:\", part2_result)",
+        "detail": "2024.day3.Day3",
+        "documentation": {}
+    },
+    {
+        "label": "Day4",
+        "kind": 6,
+        "importPath": "2024.day4.Day4",
+        "description": "2024.day4.Day4",
+        "peekOfCode": "class Day4:\n    def __init__(self):\n        self.input_content = None\n        self.grid = None\n        self.rows = 0\n        self.cols = 0\n    def solve_part1(self):\n        self.loadGrid()\n        directions = [\n            (0, 1),  ",
+        "detail": "2024.day4.Day4",
+        "documentation": {}
+    },
+    {
+        "label": "solver",
+        "kind": 5,
+        "importPath": "2024.day4.Day4",
+        "description": "2024.day4.Day4",
+        "peekOfCode": "solver = Day4()\nsolver.loadInputFiles()\npart1_result = solver.solve_part1()\nprint(\"Solution to Part 1:\", part1_result)\npart2_result = solver.solve_part2()\nprint(\"Solution to Part 2:\", part2_result)",
+        "detail": "2024.day4.Day4",
+        "documentation": {}
+    },
+    {
+        "label": "part1_result",
+        "kind": 5,
+        "importPath": "2024.day4.Day4",
+        "description": "2024.day4.Day4",
+        "peekOfCode": "part1_result = solver.solve_part1()\nprint(\"Solution to Part 1:\", part1_result)\npart2_result = solver.solve_part2()\nprint(\"Solution to Part 2:\", part2_result)",
+        "detail": "2024.day4.Day4",
+        "documentation": {}
+    },
+    {
+        "label": "part2_result",
+        "kind": 5,
+        "importPath": "2024.day4.Day4",
+        "description": "2024.day4.Day4",
+        "peekOfCode": "part2_result = solver.solve_part2()\nprint(\"Solution to Part 2:\", part2_result)",
+        "detail": "2024.day4.Day4",
+        "documentation": {}
+    }
+]
