@@ -1,42 +1,60 @@
 import os
 import requests
+import calendar
 
-YEAR = 2023
-DAY = 5
 COOKIES = os.getenv('AOC_SESSION')
 
 
-def generate():
+def generate(year = calendar.datetime.datetime.now().year, day = calendar.datetime.datetime.now().day):
+        
     folder = os.path.dirname(os.path.abspath(__file__))
     parent_folder = os.path.dirname(folder) 
-    year_folder = os.path.join(parent_folder, str(YEAR))
-    day_folder = os.path.join(year_folder, "day"+str(DAY))
+    year_folder = os.path.join(parent_folder, str(year))
+    day_folder = os.path.join(year_folder, "day"+str(day))
     os.makedirs(day_folder, exist_ok=True)
     
     day_txt = os.path.join(folder, "day.py")
     time_txt = os.path.join(folder, "timetaken.txt")
     
     with open(day_txt, 'r') as file:
-        day_content = file.read().replace('%year%', str(YEAR)).replace('%day%', str(DAY))
-        day_content = day_content.replace('Day', 'Day'+str(DAY))
-        with open(os.path.join(day_folder, "day"+str(DAY)+".py"), 'w') as day_file:
+        day_content = file.read().replace('%year%', str(year)).replace('%day%', str(day))
+        day_content = day_content.replace('Day', 'Day'+str(day))
+        with open(os.path.join(day_folder, "day"+str(day)+".py"), 'w') as day_file:
             day_file.write(day_content)
     
     with open(time_txt, 'r') as file:
-        time_content = file.read().replace('%year%', str(YEAR)).replace('%day%', str(DAY))
+        time_content = file.read().replace('%year%', str(year)).replace('%day%', str(day))
         with open(os.path.join(day_folder, "timetaken.txt"), 'w') as time_file:
             time_file.write(time_content)
             
     with open(os.path.join(day_folder, "input.txt"), 'w') as input_file:
-        input_data = input()
+        input_data = input(year, day)
         input_file.write(input_data)
     
     with open(os.path.join(day_folder, "test.txt"), 'w') as test_file:
-        pass
+        test_data = testInput(year, day)
+        test_file.write(test_data)
 
 
-def input():
-    url = f"https://adventofcode.com/{YEAR}/day/{DAY}/input"
+def testInput(year = calendar.datetime.datetime.now().year, day = calendar.datetime.datetime.now().day):
+    url = f"https://adventofcode.com/{year}/day/{day}"
+    headers = {
+        "cookie": f"{COOKIES}"
+    }
+    
+    response = requests.get(url, headers=headers)
+    
+    if response.status_code == 200:
+        test_data = response.text
+        test_data = test_data[test_data.find('For example'):]
+        test_data = test_data[test_data.find('<code>')+6:test_data.find('</code>')]
+        return test_data
+    else:
+        print("Failed to fetch test input from Advent of Code website")
+    
+
+def input(year = calendar.datetime.datetime.now().year, day = calendar.datetime.datetime.now().day):
+    url = f"https://adventofcode.com/{year}/day/{day}/input"
     headers = {
         "cookie": f"{COOKIES}"
     }
@@ -51,4 +69,4 @@ def input():
 
 
 
-generate()
+generate(year=2023, day=12)
