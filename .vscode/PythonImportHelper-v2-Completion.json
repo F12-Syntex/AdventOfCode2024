@@ -18,48 +18,37 @@
         "documentation": {}
     },
     {
+        "label": "datetime",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "datetime",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "shutil",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "shutil",
+        "description": "shutil",
+        "detail": "shutil",
+        "documentation": {}
+    },
+    {
         "label": "calendar",
         "kind": 6,
         "isExtraImport": true,
         "importPath": "calendar",
         "description": "calendar",
         "detail": "calendar",
-        "documentation": {}
-    },
-    {
-        "label": "Day12",
-        "kind": 6,
-        "importPath": "2023.day12.day12",
-        "description": "2023.day12.day12",
-        "peekOfCode": "class Day12:\n    def __init__(self):\n        self.input_content = None\n    def solve_part1(self):\n        self.loadGrid()\n        self.prettyPrintGrid()\n        return 0\n    def solve_part2(self):\n        return 0\n    def loadInputFiles(self):",
-        "detail": "2023.day12.day12",
-        "documentation": {}
-    },
-    {
-        "label": "solver",
-        "kind": 5,
-        "importPath": "2023.day12.day12",
-        "description": "2023.day12.day12",
-        "peekOfCode": "solver = Day12()\nsolver.loadInputFiles()\npart1_result = solver.solve_part1()\nprint(\"Solution to Part 1:\", part1_result)\npart2_result = solver.solve_part2()\nprint(\"Solution to Part 2:\", part2_result)",
-        "detail": "2023.day12.day12",
-        "documentation": {}
-    },
-    {
-        "label": "part1_result",
-        "kind": 5,
-        "importPath": "2023.day12.day12",
-        "description": "2023.day12.day12",
-        "peekOfCode": "part1_result = solver.solve_part1()\nprint(\"Solution to Part 1:\", part1_result)\npart2_result = solver.solve_part2()\nprint(\"Solution to Part 2:\", part2_result)",
-        "detail": "2023.day12.day12",
-        "documentation": {}
-    },
-    {
-        "label": "part2_result",
-        "kind": 5,
-        "importPath": "2023.day12.day12",
-        "description": "2023.day12.day12",
-        "peekOfCode": "part2_result = solver.solve_part2()\nprint(\"Solution to Part 2:\", part2_result)",
-        "detail": "2023.day12.day12",
         "documentation": {}
     },
     {
@@ -279,39 +268,66 @@
         "documentation": {}
     },
     {
+        "label": "AocUtils",
+        "kind": 6,
+        "importPath": "2024.day6.day6",
+        "description": "2024.day6.day6",
+        "peekOfCode": "class AocUtils:\n    def __init__(self, year, day):\n        self.year = year\n        self.day = day\n        self.session_cookie = os.getenv(\"AOC_SESSION\")\n        self.input_path = os.path.join(os.getcwd(), \"\"+str(self.year), \"day\"+str(self.day), \"test.txt\")\n    def load_input(self):\n        with open(self.input_path, \"r\") as f:\n            self.input_content = f.read().strip()\n    def load_grid(self):",
+        "detail": "2024.day6.day6",
+        "documentation": {}
+    },
+    {
         "label": "Day6",
         "kind": 6,
-        "importPath": "2024.day6.Day6",
-        "description": "2024.day6.Day6",
+        "importPath": "2024.day6.day6",
+        "description": "2024.day6.day6",
+        "peekOfCode": "class Day6:\n    def __init__(self, aoc_utils):\n        self.aoc_utils = aoc_utils\n    def solve_part1(self):\n        self.aoc_utils.load_input()\n        self.aoc_utils.load_grid()\n        self.aoc_utils.pretty_print_grid()\n        res = 0\n        return res\n    def solve_part2(self):",
+        "detail": "2024.day6.day6",
+        "documentation": {}
+    },
+    {
+        "label": "Day6",
+        "kind": 6,
+        "importPath": "2024.day6test.Day6",
+        "description": "2024.day6test.Day6",
         "peekOfCode": "class Day6:\n    def __init__(self):\n        self.input_content = None\n    def solve_part1(self):\n        self.loadGrid()\n        guard = self.locateGuard()\n        direction = (-1, 0)\n        locations = set()\n        locations.add(guard) \n        while True:",
-        "detail": "2024.day6.Day6",
+        "detail": "2024.day6test.Day6",
         "documentation": {}
     },
     {
         "label": "solver",
         "kind": 5,
-        "importPath": "2024.day6.Day6",
-        "description": "2024.day6.Day6",
+        "importPath": "2024.day6test.Day6",
+        "description": "2024.day6test.Day6",
         "peekOfCode": "solver = Day6()\nsolver.loadInputFiles()\npart1_result = solver.solve_part1()\nprint(\"Solution to Part 1:\", part1_result)\npart2_result = solver.solve_part2()\nprint(\"Solution to Part 2:\", part2_result)",
-        "detail": "2024.day6.Day6",
+        "detail": "2024.day6test.Day6",
         "documentation": {}
     },
     {
         "label": "part1_result",
         "kind": 5,
-        "importPath": "2024.day6.Day6",
-        "description": "2024.day6.Day6",
+        "importPath": "2024.day6test.Day6",
+        "description": "2024.day6test.Day6",
         "peekOfCode": "part1_result = solver.solve_part1()\nprint(\"Solution to Part 1:\", part1_result)\npart2_result = solver.solve_part2()\nprint(\"Solution to Part 2:\", part2_result)",
-        "detail": "2024.day6.Day6",
+        "detail": "2024.day6test.Day6",
         "documentation": {}
     },
     {
         "label": "part2_result",
         "kind": 5,
-        "importPath": "2024.day6.Day6",
-        "description": "2024.day6.Day6",
+        "importPath": "2024.day6test.Day6",
+        "description": "2024.day6test.Day6",
         "peekOfCode": "part2_result = solver.solve_part2()\nprint(\"Solution to Part 2:\", part2_result)",
-        "detail": "2024.day6.Day6",
+        "detail": "2024.day6test.Day6",
+        "documentation": {}
+    },
+    {
+        "label": "AocUtils",
+        "kind": 6,
+        "importPath": "generator.day",
+        "description": "generator.day",
+        "peekOfCode": "class AocUtils:\n    def __init__(self, year, day):\n        self.year = year\n        self.day = day\n        self.session_cookie = os.getenv(\"AOC_SESSION\")\n        self.input_path = os.path.join(os.getcwd(), \"\"+str(self.year), \"day\"+str(self.day), \"test.txt\")\n    def load_input(self):\n        with open(self.input_path, \"r\") as f:\n            self.input_content = f.read().strip()\n    def load_grid(self):",
+        "detail": "generator.day",
         "documentation": {}
     },
     {
@@ -319,34 +335,7 @@
         "kind": 6,
         "importPath": "generator.day",
         "description": "generator.day",
-        "peekOfCode": "class Day:\n    def __init__(self):\n        self.input_content = None\n    def solve_part1(self):\n        self.loadGrid()\n        self.prettyPrintGrid()\n        return 0\n    def solve_part2(self):\n        return 0\n    def loadInputFiles(self):",
-        "detail": "generator.day",
-        "documentation": {}
-    },
-    {
-        "label": "solver",
-        "kind": 5,
-        "importPath": "generator.day",
-        "description": "generator.day",
-        "peekOfCode": "solver = Day()\nsolver.loadInputFiles()\npart1_result = solver.solve_part1()\nprint(\"Solution to Part 1:\", part1_result)\npart2_result = solver.solve_part2()\nprint(\"Solution to Part 2:\", part2_result)",
-        "detail": "generator.day",
-        "documentation": {}
-    },
-    {
-        "label": "part1_result",
-        "kind": 5,
-        "importPath": "generator.day",
-        "description": "generator.day",
-        "peekOfCode": "part1_result = solver.solve_part1()\nprint(\"Solution to Part 1:\", part1_result)\npart2_result = solver.solve_part2()\nprint(\"Solution to Part 2:\", part2_result)",
-        "detail": "generator.day",
-        "documentation": {}
-    },
-    {
-        "label": "part2_result",
-        "kind": 5,
-        "importPath": "generator.day",
-        "description": "generator.day",
-        "peekOfCode": "part2_result = solver.solve_part2()\nprint(\"Solution to Part 2:\", part2_result)",
+        "peekOfCode": "class Day:\n    def __init__(self, aoc_utils):\n        self.aoc_utils = aoc_utils\n    def solve_part1(self):\n        self.aoc_utils.load_input()\n        self.aoc_utils.load_grid()\n        self.aoc_utils.pretty_print_grid()\n        res = 0\n        return res\n    def solve_part2(self):",
         "detail": "generator.day",
         "documentation": {}
     },
@@ -355,7 +344,7 @@
         "kind": 2,
         "importPath": "generator.generator",
         "description": "generator.generator",
-        "peekOfCode": "def generate(year = calendar.datetime.datetime.now().year, day = calendar.datetime.datetime.now().day):\n    folder = os.path.dirname(os.path.abspath(__file__))\n    parent_folder = os.path.dirname(folder) \n    year_folder = os.path.join(parent_folder, str(year))\n    day_folder = os.path.join(year_folder, \"day\"+str(day))\n    os.makedirs(day_folder, exist_ok=True)\n    day_txt = os.path.join(folder, \"day.py\")\n    time_txt = os.path.join(folder, \"timetaken.txt\")\n    with open(day_txt, 'r') as file:\n        day_content = file.read().replace('%year%', str(year)).replace('%day%', str(day))",
+        "peekOfCode": "def generate(year = calendar.datetime.datetime.now().year, day = calendar.datetime.datetime.now().day):\n    folder = os.path.dirname(os.path.abspath(__file__))\n    parent_folder = os.path.dirname(folder) \n    year_folder = os.path.join(parent_folder, str(year))\n    day_folder = os.path.join(year_folder, \"day\"+str(day))\n    if os.path.exists(day_folder):\n        print(f\"Day {day} already exists\")\n        return\n    os.makedirs(day_folder, exist_ok=True)\n    day_txt = os.path.join(folder, \"day.py\")",
         "detail": "generator.generator",
         "documentation": {}
     },
@@ -382,7 +371,7 @@
         "kind": 5,
         "importPath": "generator.generator",
         "description": "generator.generator",
-        "peekOfCode": "COOKIES = os.getenv('AOC_SESSION')\ndef generate(year = calendar.datetime.datetime.now().year, day = calendar.datetime.datetime.now().day):\n    folder = os.path.dirname(os.path.abspath(__file__))\n    parent_folder = os.path.dirname(folder) \n    year_folder = os.path.join(parent_folder, str(year))\n    day_folder = os.path.join(year_folder, \"day\"+str(day))\n    os.makedirs(day_folder, exist_ok=True)\n    day_txt = os.path.join(folder, \"day.py\")\n    time_txt = os.path.join(folder, \"timetaken.txt\")\n    with open(day_txt, 'r') as file:",
+        "peekOfCode": "COOKIES = os.getenv('AOC_SESSION')\ndef generate(year = calendar.datetime.datetime.now().year, day = calendar.datetime.datetime.now().day):\n    folder = os.path.dirname(os.path.abspath(__file__))\n    parent_folder = os.path.dirname(folder) \n    year_folder = os.path.join(parent_folder, str(year))\n    day_folder = os.path.join(year_folder, \"day\"+str(day))\n    if os.path.exists(day_folder):\n        print(f\"Day {day} already exists\")\n        return\n    os.makedirs(day_folder, exist_ok=True)",
         "detail": "generator.generator",
         "documentation": {}
     }
