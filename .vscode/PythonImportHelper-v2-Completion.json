@@ -9,6 +9,15 @@
         "documentation": {}
     },
     {
+        "label": "requests",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "requests",
+        "description": "requests",
+        "detail": "requests",
+        "documentation": {}
+    },
+    {
         "label": "Day",
         "kind": 6,
         "importPath": "2024.boilerplate.Day",
@@ -258,6 +267,87 @@
         "description": "2024.day6.Day6",
         "peekOfCode": "part2_result = solver.solve_part2()\nprint(\"Solution to Part 2:\", part2_result)",
         "detail": "2024.day6.Day6",
+        "documentation": {}
+    },
+    {
+        "label": "Day",
+        "kind": 6,
+        "importPath": "generator.day",
+        "description": "generator.day",
+        "peekOfCode": "class Day:\n    def __init__(self):\n        self.input_content = None\n    def solve_part1(self):\n        self.loadGrid()\n        self.prettyPrintGrid()\n        return 0\n    def solve_part2(self):\n        return 0\n    def loadInputFiles(self):",
+        "detail": "generator.day",
+        "documentation": {}
+    },
+    {
+        "label": "solver",
+        "kind": 5,
+        "importPath": "generator.day",
+        "description": "generator.day",
+        "peekOfCode": "solver = Day()\nsolver.loadInputFiles()\npart1_result = solver.solve_part1()\nprint(\"Solution to Part 1:\", part1_result)\npart2_result = solver.solve_part2()\nprint(\"Solution to Part 2:\", part2_result)",
+        "detail": "generator.day",
+        "documentation": {}
+    },
+    {
+        "label": "part1_result",
+        "kind": 5,
+        "importPath": "generator.day",
+        "description": "generator.day",
+        "peekOfCode": "part1_result = solver.solve_part1()\nprint(\"Solution to Part 1:\", part1_result)\npart2_result = solver.solve_part2()\nprint(\"Solution to Part 2:\", part2_result)",
+        "detail": "generator.day",
+        "documentation": {}
+    },
+    {
+        "label": "part2_result",
+        "kind": 5,
+        "importPath": "generator.day",
+        "description": "generator.day",
+        "peekOfCode": "part2_result = solver.solve_part2()\nprint(\"Solution to Part 2:\", part2_result)",
+        "detail": "generator.day",
+        "documentation": {}
+    },
+    {
+        "label": "generate",
+        "kind": 2,
+        "importPath": "generator.generator",
+        "description": "generator.generator",
+        "peekOfCode": "def generate():\n    folder = os.path.dirname(os.path.abspath(__file__))\n    parent_folder = os.path.dirname(folder) \n    year_folder = os.path.join(parent_folder, str(YEAR))\n    day_folder = os.path.join(year_folder, \"day\"+str(DAY))\n    os.makedirs(day_folder, exist_ok=True)\n    day_txt = os.path.join(folder, \"day.py\")\n    time_txt = os.path.join(folder, \"timetaken.txt\")\n    with open(day_txt, 'r') as file:\n        day_content = file.read().replace('%year%', str(YEAR)).replace('%day%', str(DAY))",
+        "detail": "generator.generator",
+        "documentation": {}
+    },
+    {
+        "label": "input",
+        "kind": 2,
+        "importPath": "generator.generator",
+        "description": "generator.generator",
+        "peekOfCode": "def input():\n    url = f\"https://adventofcode.com/{YEAR}/day/{DAY}/input\"\n    headers = {\n        \"cookie\": f\"{COOKIES}\"\n    }\n    response = requests.get(url, headers=headers)\n    if response.status_code == 200:\n        input_data = response.text.strip()\n        return input_data\n    else:",
+        "detail": "generator.generator",
+        "documentation": {}
+    },
+    {
+        "label": "YEAR",
+        "kind": 5,
+        "importPath": "generator.generator",
+        "description": "generator.generator",
+        "peekOfCode": "YEAR = 2023\nDAY = 5\nCOOKIES = os.getenv('AOC_SESSION')\ndef generate():\n    folder = os.path.dirname(os.path.abspath(__file__))\n    parent_folder = os.path.dirname(folder) \n    year_folder = os.path.join(parent_folder, str(YEAR))\n    day_folder = os.path.join(year_folder, \"day\"+str(DAY))\n    os.makedirs(day_folder, exist_ok=True)\n    day_txt = os.path.join(folder, \"day.py\")",
+        "detail": "generator.generator",
+        "documentation": {}
+    },
+    {
+        "label": "DAY",
+        "kind": 5,
+        "importPath": "generator.generator",
+        "description": "generator.generator",
+        "peekOfCode": "DAY = 5\nCOOKIES = os.getenv('AOC_SESSION')\ndef generate():\n    folder = os.path.dirname(os.path.abspath(__file__))\n    parent_folder = os.path.dirname(folder) \n    year_folder = os.path.join(parent_folder, str(YEAR))\n    day_folder = os.path.join(year_folder, \"day\"+str(DAY))\n    os.makedirs(day_folder, exist_ok=True)\n    day_txt = os.path.join(folder, \"day.py\")\n    time_txt = os.path.join(folder, \"timetaken.txt\")",
+        "detail": "generator.generator",
+        "documentation": {}
+    },
+    {
+        "label": "COOKIES",
+        "kind": 5,
+        "importPath": "generator.generator",
+        "description": "generator.generator",
+        "peekOfCode": "COOKIES = os.getenv('AOC_SESSION')\ndef generate():\n    folder = os.path.dirname(os.path.abspath(__file__))\n    parent_folder = os.path.dirname(folder) \n    year_folder = os.path.join(parent_folder, str(YEAR))\n    day_folder = os.path.join(year_folder, \"day\"+str(DAY))\n    os.makedirs(day_folder, exist_ok=True)\n    day_txt = os.path.join(folder, \"day.py\")\n    time_txt = os.path.join(folder, \"timetaken.txt\")\n    with open(day_txt, 'r') as file:",
+        "detail": "generator.generator",
         "documentation": {}
     }
 ]
