@@ -1,6 +1,6 @@
 import os
 import requests
-from datetime import datetime
+import time
 
 class GridUtils:
     @staticmethod
@@ -26,6 +26,17 @@ class GridUtils:
     @staticmethod
     def count_elements_in_grid(grid, element):
         return sum(row.count(element) for row in grid)
+
+class Stopwatch:
+    def __init__(self):
+        self.start_time = time.time() * 1000 
+    
+    def mark(self):
+        current_time = time.time() * 1000 
+        elapsed_time = current_time - self.start_time 
+        self.start_time = current_time 
+        return elapsed_time 
+
 
 class AocUtils:
     def __init__(self, year, day):
@@ -91,11 +102,13 @@ if __name__ == "__main__":
     solver.load_grid()
     solver.pretty_print_grid()
 
+    stopwatch = Stopwatch()
+
     part1_result = solver.solve_part1()
-    print("Solution to Part 1:", part1_result)
+    print("Solution to Part 1:", part1_result, "(", round(stopwatch.mark()), "ms )")
 
     part2_result = solver.solve_part2()
-    print("Solution to Part 2:", part2_result)
+    print("Solution to Part 2:", part2_result, "(", round(stopwatch.mark()), "ms )")
 
 # Access grid-related utility methods
 print(GridUtils.cardinal_directions())

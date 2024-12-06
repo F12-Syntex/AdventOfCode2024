@@ -1,4 +1,5 @@
 import os
+import time
 
 class Day6:
     def __init__(self):
@@ -105,8 +106,14 @@ class Day6:
 solver = Day6()
 solver.loadInputFiles()
 
+startTime = int(round(time.time() * 1000))
+
 part1_result = solver.solve_part1()
-print("Solution to Part 1:", part1_result)
+endTime = int(round(time.time() * 1000))
+print("Solution to Part 1:", part1_result, "Time:", endTime - startTime, "ms")
+
+startTime = int(round(time.time() * 1000))
 
 part2_result = solver.solve_part2()
-print("Solution to Part 2:", part2_result)
+endTime = int(round(time.time() * 1000))
+print("Solution to Part 2:", part2_result, "Time:", endTime - startTime, "ms")

@@ -9,20 +9,21 @@
         "documentation": {}
     },
     {
+        "label": "time",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "time",
+        "description": "time",
+        "detail": "time",
+        "documentation": {}
+    },
+    {
         "label": "requests",
         "kind": 6,
         "isExtraImport": true,
         "importPath": "requests",
         "description": "requests",
         "detail": "requests",
-        "documentation": {}
-    },
-    {
-        "label": "datetime",
-        "importPath": "datetime",
-        "description": "datetime",
-        "isExtraImport": true,
-        "detail": "datetime",
         "documentation": {}
     },
     {
@@ -264,7 +265,16 @@
         "kind": 5,
         "importPath": "2024.day6.Day6",
         "description": "2024.day6.Day6",
-        "peekOfCode": "solver = Day6()\nsolver.loadInputFiles()\npart1_result = solver.solve_part1()\nprint(\"Solution to Part 1:\", part1_result)\npart2_result = solver.solve_part2()\nprint(\"Solution to Part 2:\", part2_result)",
+        "peekOfCode": "solver = Day6()\nsolver.loadInputFiles()\nstartTime = int(round(time.time() * 1000))\npart1_result = solver.solve_part1()\nendTime = int(round(time.time() * 1000))\nprint(\"Solution to Part 1:\", part1_result, \"Time:\", endTime - startTime, \"ms\")\nstartTime = int(round(time.time() * 1000))\npart2_result = solver.solve_part2()\nendTime = int(round(time.time() * 1000))\nprint(\"Solution to Part 2:\", part2_result, \"Time:\", endTime - startTime, \"ms\")",
+        "detail": "2024.day6.Day6",
+        "documentation": {}
+    },
+    {
+        "label": "startTime",
+        "kind": 5,
+        "importPath": "2024.day6.Day6",
+        "description": "2024.day6.Day6",
+        "peekOfCode": "startTime = int(round(time.time() * 1000))\npart1_result = solver.solve_part1()\nendTime = int(round(time.time() * 1000))\nprint(\"Solution to Part 1:\", part1_result, \"Time:\", endTime - startTime, \"ms\")\nstartTime = int(round(time.time() * 1000))\npart2_result = solver.solve_part2()\nendTime = int(round(time.time() * 1000))\nprint(\"Solution to Part 2:\", part2_result, \"Time:\", endTime - startTime, \"ms\")",
         "detail": "2024.day6.Day6",
         "documentation": {}
     },
@@ -273,7 +283,25 @@
         "kind": 5,
         "importPath": "2024.day6.Day6",
         "description": "2024.day6.Day6",
-        "peekOfCode": "part1_result = solver.solve_part1()\nprint(\"Solution to Part 1:\", part1_result)\npart2_result = solver.solve_part2()\nprint(\"Solution to Part 2:\", part2_result)",
+        "peekOfCode": "part1_result = solver.solve_part1()\nendTime = int(round(time.time() * 1000))\nprint(\"Solution to Part 1:\", part1_result, \"Time:\", endTime - startTime, \"ms\")\nstartTime = int(round(time.time() * 1000))\npart2_result = solver.solve_part2()\nendTime = int(round(time.time() * 1000))\nprint(\"Solution to Part 2:\", part2_result, \"Time:\", endTime - startTime, \"ms\")",
+        "detail": "2024.day6.Day6",
+        "documentation": {}
+    },
+    {
+        "label": "endTime",
+        "kind": 5,
+        "importPath": "2024.day6.Day6",
+        "description": "2024.day6.Day6",
+        "peekOfCode": "endTime = int(round(time.time() * 1000))\nprint(\"Solution to Part 1:\", part1_result, \"Time:\", endTime - startTime, \"ms\")\nstartTime = int(round(time.time() * 1000))\npart2_result = solver.solve_part2()\nendTime = int(round(time.time() * 1000))\nprint(\"Solution to Part 2:\", part2_result, \"Time:\", endTime - startTime, \"ms\")",
+        "detail": "2024.day6.Day6",
+        "documentation": {}
+    },
+    {
+        "label": "startTime",
+        "kind": 5,
+        "importPath": "2024.day6.Day6",
+        "description": "2024.day6.Day6",
+        "peekOfCode": "startTime = int(round(time.time() * 1000))\npart2_result = solver.solve_part2()\nendTime = int(round(time.time() * 1000))\nprint(\"Solution to Part 2:\", part2_result, \"Time:\", endTime - startTime, \"ms\")",
         "detail": "2024.day6.Day6",
         "documentation": {}
     },
@@ -282,7 +310,16 @@
         "kind": 5,
         "importPath": "2024.day6.Day6",
         "description": "2024.day6.Day6",
-        "peekOfCode": "part2_result = solver.solve_part2()\nprint(\"Solution to Part 2:\", part2_result)",
+        "peekOfCode": "part2_result = solver.solve_part2()\nendTime = int(round(time.time() * 1000))\nprint(\"Solution to Part 2:\", part2_result, \"Time:\", endTime - startTime, \"ms\")",
+        "detail": "2024.day6.Day6",
+        "documentation": {}
+    },
+    {
+        "label": "endTime",
+        "kind": 5,
+        "importPath": "2024.day6.Day6",
+        "description": "2024.day6.Day6",
+        "peekOfCode": "endTime = int(round(time.time() * 1000))\nprint(\"Solution to Part 2:\", part2_result, \"Time:\", endTime - startTime, \"ms\")",
         "detail": "2024.day6.Day6",
         "documentation": {}
     },
@@ -292,6 +329,15 @@
         "importPath": "generator.day",
         "description": "generator.day",
         "peekOfCode": "class GridUtils:\n    @staticmethod\n    def cardinal_directions():\n        return [(1, 0), (-1, 0), (0, 1), (0, -1)]\n    @staticmethod\n    def diagonal_directions():\n        return [(1, 1), (-1, -1), (1, -1), (-1, 1)]\n    @staticmethod\n    def all_directions():\n        return GridUtils.cardinal_directions() + GridUtils.diagonal_directions()",
+        "detail": "generator.day",
+        "documentation": {}
+    },
+    {
+        "label": "Stopwatch",
+        "kind": 6,
+        "importPath": "generator.day",
+        "description": "generator.day",
+        "peekOfCode": "class Stopwatch:\n    def __init__(self):\n        self.start_time = time.time() * 1000 \n    def mark(self):\n        current_time = time.time() * 1000 \n        elapsed_time = current_time - self.start_time \n        self.start_time = current_time \n        return elapsed_time \nclass AocUtils:\n    def __init__(self, year, day):",
         "detail": "generator.day",
         "documentation": {}
     },
