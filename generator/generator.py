@@ -1,5 +1,4 @@
 import os
-import shutil
 import requests
 import calendar
 
@@ -78,4 +77,4 @@ def input(year = calendar.datetime.datetime.now().year, day = calendar.datetime.
         print("Failed to fetch input from Advent of Code website")
 
 
-generate()
+generate(year=2018, day=6)
