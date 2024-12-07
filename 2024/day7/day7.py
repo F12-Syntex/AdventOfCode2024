@@ -42,9 +42,12 @@ class AocUtils:
         self.year = year
         self.day = day
         self.session_cookie = os.getenv("AOC_SESSION")
-        
-    def load_input(self, file):
-        self.input_path = os.path.join(os.getcwd(), str(self.year), "day" + str(self.day), file+".txt")
+        self.input_path = os.path.join(os.getcwd(), str(self.year), "day" + str(self.day), "input.txt")
+
+    def getInput(self):
+        return self.input_content
+
+    def load_input(self):
         with open(self.input_path, "r") as f:
             self.input_content = f.read().strip()
 
@@ -65,36 +68,77 @@ class AocUtils:
         else:
             print(f"Error submitting Part {part} answer. Status code: {response.status_code}")
 
-class Day:
+class Day7:
     def __init__(self, aoc_utils):
         self.aoc_utils = aoc_utils
         self.grid = None
-        self.aoc_utils.load_input("test")
-        self.input_content = self.aoc_utils.input_content
 
     def load_grid(self):
-        self.grid = [[c for c in line] for line in self.input_content.split("\n")]
+        self.aoc_utils.load_input()
+        self.grid = [[c for c in line] for line in self.aoc_utils.input_content.split("\n")]
 
     def pretty_print_grid(self):
         for line in self.grid:
             print("".join(line))
-
+            
     def solve_part1(self):
         self.load_grid()
-        self.pretty_print_grid()
-        res = 0
+        
+        equations = self.aoc_utils.getInput().split("\n")
+        operations = ["+", "*"]
+        res = 0 
+
+        for equation in equations:
+            target, values = equation.split(":")
+            values = [int(x) for x in values.strip().split(" ")]
+            
+            res += self.permute(operations, values, target)
+        
         return res
 
     def solve_part2(self):
-        res = 0
+        self.load_grid()
+        
+        equations = self.aoc_utils.getInput().split("\n")
+        operations = ["+", "*", "|"]
+        res = 0 
+
+        for equation in equations:
+            target, values = equation.split(":")
+            values = [int(x) for x in values.strip().split(" ")]
+            
+            res += self.permute(operations, values, target)
+        
         return res
+    
+    def permute(self, operations, values, target):
+        for i in range(len(operations) ** (len(values) - 1)):
+            operations_permutation = []
+            for j in range(len(values) - 1):
+                operations_permutation.append(operations[i % len(operations)])
+                i //= len(operations)
+            
+            result = values[0]
+            for j in range(len(operations_permutation)):
+                if operations_permutation[j] == "+":
+                    result += values[j + 1]
+                elif operations_permutation[j] == "*":
+                    result *= values[j + 1]
+                elif operations_permutation[j] == "|":
+                    result = int(str(result) + str(values[j + 1]))
+            
+            if result == int(target):
+                return int(target)
+        return 0
 
 if __name__ == "__main__":
-    year = int("%year%")
-    day = int("%day%")
+    year = int("2024")
+    day = int("7")
 
     aoc_utils = AocUtils(year, day)
-    solver = Day(aoc_utils)
+    solver = Day7(aoc_utils)
+
+    solver.load_grid()
 
     stopwatch = Stopwatch()
 
