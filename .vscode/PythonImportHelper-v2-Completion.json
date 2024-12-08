@@ -360,6 +360,33 @@
         "documentation": {}
     },
     {
+        "label": "Stopwatch",
+        "kind": 6,
+        "importPath": "2024.day8.day8",
+        "description": "2024.day8.day8",
+        "peekOfCode": "class Stopwatch:\n    def __init__(self):\n        self.start_time = time.time() * 1000 \n    def mark(self):\n        current_time = time.time() * 1000 \n        elapsed_time = current_time - self.start_time \n        self.start_time = current_time \n        return elapsed_time \nclass AocUtils:\n    def __init__(self, year, day):",
+        "detail": "2024.day8.day8",
+        "documentation": {}
+    },
+    {
+        "label": "AocUtils",
+        "kind": 6,
+        "importPath": "2024.day8.day8",
+        "description": "2024.day8.day8",
+        "peekOfCode": "class AocUtils:\n    def __init__(self, year, day):\n        self.year = year\n        self.day = day\n        self.session_cookie = os.getenv(\"AOC_SESSION\")\n    def load_input(self, file):\n        self.input_path = os.path.join(os.getcwd(), str(self.year), \"day\" + str(self.day), file+\".txt\")\n        with open(self.input_path, \"r\") as f:\n            self.input_content = f.read().strip()\n    def submit(self, part, result):",
+        "detail": "2024.day8.day8",
+        "documentation": {}
+    },
+    {
+        "label": "Day8",
+        "kind": 6,
+        "importPath": "2024.day8.day8",
+        "description": "2024.day8.day8",
+        "peekOfCode": "class Day8:\n    def __init__(self, aoc_utils):\n        self.aoc_utils = aoc_utils\n        self.grid = None\n        self.aoc_utils.load_input(\"input\")\n        self.input_content = self.aoc_utils.input_content\n    def load_grid(self):\n        self.grid = [[c for c in line] for line in self.input_content.split(\"\\n\")]\n    def pretty_print_grid(self):\n        for line in self.grid:",
+        "detail": "2024.day8.day8",
+        "documentation": {}
+    },
+    {
         "label": "GridUtils",
         "kind": 6,
         "importPath": "generator.day",
