@@ -1,0 +1,170 @@
+import os
+import requests
+import time
+
+class Stopwatch:
+    def __init__(self):
+        self.start_time = time.time() * 1000 
+    
+    def mark(self):
+        current_time = time.time() * 1000 
+        elapsed_time = current_time - self.start_time 
+        self.start_time = current_time 
+        return elapsed_time 
+
+class AocUtils:
+    def __init__(self, year, day):
+        self.year = year
+        self.day = day
+        self.session_cookie = os.getenv("AOC_SESSION")
+        
+    def load_input(self, file):
+        self.input_path = os.path.join(os.getcwd(), str(self.year), "day" + str(self.day), file+".txt")
+        with open(self.input_path, "r") as f:
+            self.input_content = f.read().strip()
+
+    def submit(self, part, result):
+        url = f"https://adventofcode.com/{self.year}/day/{self.day}/answer"
+        data = {"level": part, "answer": str(result)}
+        headers = {"Cookie": f"session={self.session_cookie}"}
+        response = requests.post(url, data=data, headers=headers)
+
+        if response.status_code == 200:
+            if "<article><p>" in response.text:
+                start_index = response.text.index("<article><p>") + len("<article><p>")
+                end_index = response.text.index("</p></article>")
+                feedback = response.text[start_index:end_index]
+                print(f"Part {part} answer submission feedback: {feedback}")
+            else:
+                print(f"Part {part} answer submitted successfully!")
+        else:
+            print(f"Error submitting Part {part} answer. Status code: {response.status_code}")
+
+class Day9:
+    def __init__(self, aoc_utils):
+        self.aoc_utils = aoc_utils
+        self.grid = None
+        self.aoc_utils.load_input("test")
+        self.input_content = self.aoc_utils.input_content
+
+    def load_grid(self):
+        self.grid = [[c for c in line] for line in self.input_content.split("\n")]
+
+    def pretty_print_grid(self):
+        for line in self.grid:
+            print("".join(line))
+
+    def get_files(self):
+        files = []
+        line = self.input_content.split("\n")[0]
+        id = 0
+        for i in range(len(line)):
+            is_length = i % 2 == 0
+            digit = int(line[i])
+            
+            if is_length:
+                files.append((digit, id))
+                id+=1
+            else:
+                files.append(digit)
+        files.append(0)
+        return files   
+    
+    def get_word(self, files):
+        word = ""
+        for file in files:
+            if type(file) == int:
+                word += '.'*file
+            else:
+                length = file[0]
+                id = file[1]
+                word += str(id)*length
+        return word
+    
+    def find_first_empty_space(self, word):
+        for i in range(len(word)):
+            if word[i] == '.':
+                return i
+        return -1
+    
+    def left_shift(self, word):
+        
+        file_segment = []
+
+        id = -1
+        for i in range(len(word) - 1, -1, -1):  
+            if word[i] != '.':
+                file_segment.append(i)
+                id = word[i]
+                break
+    
+        for i in range(len(word)):
+            if word[i] == id:
+                file_segment.append(i)
+                break
+        
+        sx, ex = file_segment[1], file_segment[0]
+        
+        id = word[sx]
+        
+        for i in range(sx, ex+1):
+            available_space_index = self.find_first_empty_space(word)
+
+            if available_space_index == -1:
+                break
+            
+            word = word[:available_space_index] + id + word[available_space_index+1:]
+            word = word[:i] + '.' + word[i+1:]
+
+        return word
+    
+    def defragmented(self, word):
+        stripped = word.rstrip('.')
+        wordWithNoDots = stripped.replace('.', '')
+        
+        return stripped == wordWithNoDots
+
+
+    def solve_part1(self):
+        files = self.get_files()
+        world = self.get_word(files)
+        
+        # for file in files:
+        #     print(file)
+        
+        # print(world)
+        
+        defragmented = 0
+        while not self.defragmented(world):
+            print("completed: ", defragmented, "/", len(files))
+            world = self.left_shift(world)
+            # print(world)
+        
+        checksum = 0
+        
+        for i in range(len(world)):
+            if world[i] == '.':
+                break
+            
+            checksum += i * int(world[i])
+        
+        return checksum
+
+    def solve_part2(self):
+        res = 0
+        return res
+
+if __name__ == "__main__":
+    year = int("2024")
+    day = int("9")
+
+    aoc_utils = AocUtils(year, day)
+    solver = Day9(aoc_utils)
+
+    stopwatch = Stopwatch()
+
+    part1_result = solver.solve_part1()
+    print("Solution to Part 1:", part1_result, "(", round(stopwatch.mark()), "ms )")
+
+    part2_result = solver.solve_part2()
+    print("Solution to Part 2:", part2_result, "(", round(stopwatch.mark()), "ms )")
